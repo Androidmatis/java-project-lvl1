@@ -1,38 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Scanner;
 
 public class CheckParity {
     public static void checkParity() {
+        final int numberRounds = 3;    // Количество правильных ответов для попеды
+        final int numberParam = 3;
+        String[][] array = new String[numberRounds][numberParam];
         int randomNumber;
-        var countWin = 0;
-        var name = Engine.whatYouName();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        final int numberWin = 3;    // Количество правильных ответов для попеды
+        var rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         final int maxNumber = 100;  // Максимальное значение рандомного числа
-        for (; countWin < numberWin; countWin++) {
-            randomNumber = (int) (Math.random() * maxNumber);
-            System.out.println("Question: " + randomNumber);
-            System.out.println("\nYour answer:");
-            Scanner answerScan = new Scanner(System.in);
-            String answer = answerScan.nextLine();
-            if (randomNumber % 2 == 0 && answer.equals("yes")) {
-                System.out.println("Correct!");
-            } else if (randomNumber % 2 == 1 && answer.equals("no")) {
-                System.out.println("Correct!");
-            } else if (randomNumber % 2 == 0 && !answer.equals("yes")) {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was 'yes'.");
-                Engine.youLose(name);
-                break;
-            } else if (randomNumber % 2 == 1 && !answer.equals("no")) {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was 'no'.");
-                Engine.youLose(name);
-                break;
+        for (var i = 0; i < numberRounds; i++) {
+            int questionInt = (int) (Math.random() * maxNumber);
+            String questionString = Integer.toString(questionInt);
+            array[i][0] = questionString;
+            if (questionInt % 2 == 0) {
+                array[i][1] = "yes";
+                array[i][2] = " is wrong answer ;(. Correct answer was 'yes'.";
+            } else if (questionInt % 2 == 1) {
+                array[i][1] = "no";
+                array[i][2] = " is wrong answer ;(. Correct answer was 'no'.";
             }
         }
-        if (countWin == numberWin) {
-            Engine.youWin(name);
-        }
+        Engine.engine(array, rule);
     }
 }

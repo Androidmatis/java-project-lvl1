@@ -2,44 +2,31 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Scanner;
-
 public class Prime {
     public static void prime() {
+        final int numberRounds = 3;    // Количество правильных ответов для попеды
+        final int numberParam = 3;
+        String[][] array = new String[numberRounds][numberParam];
         int number;
-        var countWin = 0;
-        var name = Engine.whatYouName();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        final int numberWin = 3;    // Количество правильных ответов для попеды
+        String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         final int maxNumber = 100;  // Максимальное значение рандомного числа
-        for (; countWin < numberWin; countWin++) {
+        for (var i = 0; i < numberRounds; i++) {
             number = (int) (Math.random() * maxNumber);
-            System.out.println("Question: " + number);
-            System.out.println("\nYour answer:");
-            Scanner answerScan = new Scanner(System.in);
-            String answer = answerScan.nextLine();
+            array[i][0] = "Question: " + number;
             boolean prime = true;
-            for (var i = 2; i < number; i++) {
-                if (number % i == 0) {
+            for (var ii = 2; ii < number; ii++) {
+                if (number % ii == 0) {
                     prime = false;
                 }
             }
-            if (prime && answer.equals("yes")) {
-                System.out.println("Correct!");
-            } else if (!prime && answer.equals("no")) {
-                System.out.println("Correct!");
-            } else if (prime && !answer.equals("yes")) {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was 'yes'.");
-                Engine.youLose(name);
-                break;
-            } else if (!prime && !answer.equals("no")) {
-                System.out.println("'" + answer + "'" + "is wrong answer ;(. Correct answer was 'no'.");
-                Engine.youLose(name);
-                break;
+            if (prime) {
+                array[i][1] = "yes";
+                array[i][2] = " is wrong answer ;(. Correct answer was 'yes'.";
+            } else {
+                array[i][1] = "no";
+                array[i][2] = " is wrong answer ;(. Correct answer was 'no'.";
             }
         }
-        if (countWin == numberWin) {
-            Engine.youWin(name);
-        }
+        Engine.engine(array, rule);
     }
 }
