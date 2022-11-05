@@ -25,7 +25,7 @@ public class Progression {
             for (var iii = 1; iii < number.length; iii++) {
                 exercise = exercise + " " + number[iii];
             }
-            array[i][0] = "Question: " + exercise;
+            array[i][0] = exercise;
             array[i][1] = result;
             array[i][2] = " is wrong answer ;(. Correct answer was " + result + ".";
         }
