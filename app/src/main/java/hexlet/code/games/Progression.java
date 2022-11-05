@@ -20,7 +20,7 @@ public class Progression {
                 number[ii] = Integer.toString(Integer.parseInt(number[ii - 1]) + sizeProgression);
             }
             var result = number[numberElementInArray];
-            number[numberElementInArray] = ". .";
+            number[numberElementInArray] = "..";
             String exercise = "";
             for (var iii = 1; iii < number.length; iii++) {
                 exercise = exercise + " " + number[iii];
