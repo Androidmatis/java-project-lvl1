@@ -6,13 +6,13 @@ public class Prime {
     public static void prime() {
         final int numberRounds = 3;    // Количество правильных ответов для попеды
         final int numberParam = 3;
-        String[][] array = new String[numberRounds][numberParam];
+        String[][] ParametrsGame = new String[numberRounds][numberParam];
         int number;
         String rule = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         final int maxNumber = 100;  // Максимальное значение рандомного числа
         for (var i = 0; i < numberRounds; i++) {
             number = (int) (Math.random() * maxNumber);
-            array[i][0] = Integer.toString(number);
+            ParametrsGame[i][0] = Integer.toString(number);
             boolean prime = true;
             for (var ii = 2; ii < number; ii++) {
                 if (number % ii == 0) {
@@ -23,13 +23,13 @@ public class Prime {
                 prime = false;
             }
             if (prime) {
-                array[i][1] = "yes";
-                array[i][2] = " is wrong answer ;(. Correct answer was 'yes'.";
+                ParametrsGame[i][1] = "yes";
+                ParametrsGame[i][2] = " is wrong answer ;(. Correct answer was 'yes'.";
             } else {
-                array[i][1] = "no";
-                array[i][2] = " is wrong answer ;(. Correct answer was 'no'.";
+                ParametrsGame[i][1] = "no";
+                ParametrsGame[i][2] = " is wrong answer ;(. Correct answer was 'no'.";
             }
         }
-        Engine.engine(array, rule);
+        Engine.engine(ParametrsGame, rule);
     }
 }
