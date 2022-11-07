@@ -6,7 +6,7 @@ public class Calc {
     public static void calc() {
         final int numberRounds = 3;    // Количество правильных ответов для попеды
         final int numberParam = 3;
-        String[][] ParametrsGame = new String[numberRounds][numberParam];
+        String[][] parametrsGame = new String[numberRounds][numberParam];
         int number1;
         int number2;
         String operator;
@@ -25,7 +25,7 @@ public class Calc {
             } else {
                 operator = "-";
             }
-            ParametrsGame[i][0] = number1 + " " + operator + " " + number2;
+            parametrsGame[i][0] = number1 + " " + operator + " " + number2;
             if (operator.equals("+")) {
                 resultMathEx = number1 + number2;
             } else if (operator.equals("-")) {
@@ -33,9 +33,9 @@ public class Calc {
             } else if (operator.equals("*")) {
                 resultMathEx = number1 * number2;
             }
-            ParametrsGame[i][1] = Integer.toString(resultMathEx);
-            ParametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + resultMathEx + ".";
+            parametrsGame[i][1] = Integer.toString(resultMathEx);
+            parametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + resultMathEx + ".";
         }
-        Engine.engine(ParametrsGame, rule);
+        Engine.engine(parametrsGame, rule);
     }
 }

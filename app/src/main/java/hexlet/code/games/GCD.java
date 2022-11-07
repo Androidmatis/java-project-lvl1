@@ -6,7 +6,7 @@ public class GCD {
     public static void gcd() {
         final int numberRounds = 3;    // Количество правильных ответов для попеды
         final int numberParam = 3;
-        String[][] ParametrsGame = new String[numberRounds][numberParam];
+        String[][] parametrsGame = new String[numberRounds][numberParam];
         int number1;
         int number2;
         var result = 0;
@@ -22,7 +22,7 @@ public class GCD {
             if (number2 == 0) {
                 number2 = 1;
             }
-            ParametrsGame[i][0] = number1 + " " + number2;
+            parametrsGame[i][0] = number1 + " " + number2;
             if (number1 < number2) {
                 miniNumber = number1;
             } else {
@@ -33,9 +33,9 @@ public class GCD {
                     result = ii;
                 }
             }
-            ParametrsGame[i][1] = Integer.toString(result);
-            ParametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + result + ".";
+            parametrsGame[i][1] = Integer.toString(result);
+            parametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + result + ".";
         }
-        Engine.engine(ParametrsGame, rule);
+        Engine.engine(parametrsGame, rule);
     }
 }

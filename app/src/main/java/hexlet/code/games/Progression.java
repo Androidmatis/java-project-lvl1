@@ -7,7 +7,7 @@ public class Progression {
         final int numberRounds = 3;    // Количество правильных ответов для попеды
         final int numberParam = 3;
         final int maxsizeProgression = 10;
-        String[][] ParametrsGame = new String[numberRounds][numberParam];
+        String[][] parametrsGame = new String[numberRounds][numberParam];
         String[] number = new String[maxsizeProgression];
         var countWin = 0;
         var rule = "What number is missing in the progression?";
@@ -29,10 +29,10 @@ public class Progression {
                     exercise = exercise + " " + number[iii];
                 }
             }
-            ParametrsGame[i][0] = exercise;
-            ParametrsGame[i][1] = result;
-            ParametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + result + ".";
+            parametrsGame[i][0] = exercise;
+            parametrsGame[i][1] = result;
+            parametrsGame[i][2] = " is wrong answer ;(. Correct answer was " + result + ".";
         }
-        Engine.engine(ParametrsGame, rule);
+        Engine.engine(parametrsGame, rule);
     }
 }
