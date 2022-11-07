@@ -18,9 +18,9 @@ public class Calc {
             number1 = (int) (Math.random() * maxNumber);
             number2 = (int) (Math.random() * maxNumber);
             randomOperator = (int) (Math.random() * maxNumber);
-            if (randomOperator > 66) {
+            if (randomOperator > maxNumber - (maxNumber / numberParam) {
                 operator = "*";
-            } else if (randomOperator < 33) {
+            } else if (randomOperator < maxNumber / numberParam) {
                 operator = "+";
             } else {
                 operator = "-";
