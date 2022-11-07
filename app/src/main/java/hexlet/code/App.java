@@ -23,25 +23,31 @@ public class App {
         System.out.println("Your choice: " + choice);
         final int maxNumberGame = 6;
         final int minNumberGame = 1;
+        final int numberCliGame = 1;
+        final int numberCheckParityGame = 2;
+        final int numberCalcGame = 3;
+        final int numberGCDGame = 4;
+        final int numberProgressionGame = 5;
+        final int numberPrimeGame = 6;
         for (int i = minNumberGame; i <= maxNumberGame; i++) {
             if (Integer.toString(i).equals(choice)) {
                 switch (Integer.parseInt(choice)) {
-                    case 1:
+                    case numberCliGame:
                         Cli.whatYouName();
                         break;
-                    case 2:
+                    case numberCheckParityGame:
                         CheckParity.checkParity();
                         break;
-                    case 3:
+                    case numberCalcGame:
                         Calc.calc();
                         break;
-                    case 4:
+                    case numberGCDGame:
                         GCD.gcd();
                         break;
-                    case 5:
+                    case numberProgressionGame:
                         Progression.progression();
                         break;
-                    case 6:
+                    case numberPrimeGame:
                         Prime.prime();
                         break;
                     default:
