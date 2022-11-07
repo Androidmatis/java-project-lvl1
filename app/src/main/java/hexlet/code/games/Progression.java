@@ -25,8 +25,9 @@ public class Progression {
             for (var iii = 1; iii < number.length; iii++) {
                 if (iii == 1) {
                     exercise = exercise + number[iii];
+                } else {
+                    exercise = exercise + " " + number[iii];
                 }
-                exercise = exercise + " " + number[iii];
             }
             array[i][0] = exercise;
             array[i][1] = result;
