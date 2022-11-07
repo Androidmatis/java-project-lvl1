@@ -19,6 +19,9 @@ public class Prime {
                     prime = false;
                 }
             }
+            if (number < 2) {
+                prime = false;
+            }
             if (prime) {
                 array[i][1] = "yes";
                 array[i][2] = " is wrong answer ;(. Correct answer was 'yes'.";
