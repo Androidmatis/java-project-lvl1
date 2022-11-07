@@ -15,8 +15,14 @@ public class GCD {
         int miniNumber;
         for (var i = 0; i < numberRounds; i++) {
             number1 = (int) (Math.random() * maxNumber);
+            if (number1 == 0) {
+                number1 = 1;
+            }
             number2 = (int) (Math.random() * maxNumber);
-            array[i][0] = "Question: " + number1 + " " + number2;
+            if (number2 == 0) {
+                number2 = 1;
+            }
+            array[i][0] = number1 + " " + number2;
             if (number1 < number2) {
                 miniNumber = number1;
             } else {

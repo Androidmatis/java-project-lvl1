@@ -12,7 +12,7 @@ public class Prime {
         final int maxNumber = 100;  // Максимальное значение рандомного числа
         for (var i = 0; i < numberRounds; i++) {
             number = (int) (Math.random() * maxNumber);
-            array[i][0] = "Question: " + number;
+            array[i][0] = Integer.toString(number);
             boolean prime = true;
             for (var ii = 2; ii < number; ii++) {
                 if (number % ii == 0) {

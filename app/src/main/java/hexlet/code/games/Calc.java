@@ -25,7 +25,7 @@ public class Calc {
             } else {
                 operator = "-";
             }
-            array[i][0] = "Question: " + number1 + " " + operator + " " + number2;
+            array[i][0] = number1 + " " + operator + " " + number2;
             if (operator.equals("+")) {
                 resultMathEx = number1 + number2;
             } else if (operator.equals("-")) {
