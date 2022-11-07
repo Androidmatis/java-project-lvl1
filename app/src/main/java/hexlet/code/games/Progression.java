@@ -22,8 +22,8 @@ public class Progression {
             var result = number[numberElementInArray];
             number[numberElementInArray] = "..";
             String exercise = "";
-            for (var iii = 1; iii < number.length; iii++) {
-                if (iii == 1) {
+            for (var iii = 0; iii < number.length; iii++) {
+                if (iii == 0) {
                     exercise = exercise + number[iii];
                 } else {
                     exercise = exercise + " " + number[iii];
